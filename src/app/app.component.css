@@ -1,0 +1,29 @@
+left-aside{
+    position: absolute;
+    top: 56px;
+    height: 100vh;
+    
+}
+.container{
+    display: flex;
+    background-color: #efefef;
+}
+main-body{
+    flex-basis: 47%;
+    position: relative;
+    top: 65px;
+    left: 241px;
+    background-color: #efefef;
+}
+right-main{
+    flex-basis: 25%;
+    position: sticky;
+    top: 70px;
+    align-self: flex-start;
+    background: var(--bg-color);
+    padding: 20px;
+    border-radius: 4px;
+    color: #626262;
+    position: relative;
+    left: 288px;
+}

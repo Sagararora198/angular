@@ -1,0 +1,20 @@
+<aside class="leftaside">
+    <div class="container">
+
+    
+    <div class="imp-links">
+        <a href="#"><img src="https://i.postimg.cc/RCj4MjnC/news.png">Latest News</a>
+        <a href="#"><img src="https://i.postimg.cc/MpBwMtV0/friends.png">Friendss</a>
+        <a href="#"><img src="https://i.postimg.cc/44FRWj1b/group.png">Group</a>
+        <a href="#"><img src="https://i.postimg.cc/0jh39RtT/marketplace.png">Marketplace</a>
+        <a href="#"><img src="https://i.postimg.cc/VsXHCTVk/watch.png">Watch</a>
+        <a href="#">See More</a>
+    </div>
+    <div class="shortcut-link">
+        <p>Your Shortcuts</p>
+        @for (shortcut of Shortcuts; track $index) {
+            <a href="#"> <img [src]="shortcut.shortcut_img">{{shortcut.shortcut_name}}</a>
+        }
+    </div>
+    </div>
+</aside>

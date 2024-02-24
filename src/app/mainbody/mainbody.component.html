@@ -1,0 +1,195 @@
+<div class="story-gallery">
+    <div class="story story1" [ngStyle]="backgroundImageStyle">
+        <img src="https://i.postimg.cc/TPh453Zz/upload.png">
+        <p>Post Story</p>
+
+    </div>
+    @for (item of Stories; track $index) {
+    <div class="story" [class]="item.id"
+        [ngStyle]="{ 'background-image': 'linear-gradient(transparent, rgba(0,0,0,0.5)), url(' + item.pfp_link + ')' }">
+        <img [src]="item.story_preview">
+        <p>{{item.first_name}} {{item.last_name}}</p>
+    </div>
+    }
+</div>
+<div class="write-post-container">
+    <div class="user-profile">
+        <img src="https://i.postimg.cc/cHg22LhR/profile-pic.png">
+        <div>
+            <p>{{loggedin_user.first_name}} {{loggedin_user.last_name}}</p>
+            <small>Public <i class="fas fa-caret-down"></i></small>
+        </div>
+    </div>
+    <div class="post-input-container">
+        <textarea rows="3" placeholder="What's on your mind, {{loggedin_user.first_name}}?"></textarea>
+        <div class="add-post-links">
+            <a href="#"><img src="https://i.postimg.cc/QMD2BDXs/live-video.png">Live Video</a>
+            <a href="#"><img src="https://i.postimg.cc/6pKKZn0D/photo.png">Photo/Video</a>
+            <a href="#"><img src="https://i.postimg.cc/Pf6TBCdD/feeling.png">Feling/Activity</a>
+        </div>
+    </div>
+</div>
+@for (item of Posts; track $index) {
+    <div class="post-container">
+        <div class="post-row">
+            <div class="user-profile">
+            <img [src]="item.user_pfp">
+            <div>
+                <p>
+                    {{item.posted_by}}
+                </p>
+                <span>
+                    {{item.posted_on}}
+                </span>
+            </div>
+
+        </div>
+        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+    </div>
+
+    
+    <p class="post-text" [innerHTML]="item.post_text">
+        
+
+    </p>
+    <img [src]="item.post_img" alt="" class="post-img">
+    <div class="post-row">
+        <div class="activity-icons">
+            <div><img src="https://i.postimg.cc/pLKNXrMq/like-blue.png" alt="">{{item.post_likes}}</div>
+            <div><img src="https://i.postimg.cc/rmjMymWv/comments.png" alt="">{{item.post_comment}}</div>
+            <div><img src="https://i.postimg.cc/T2bBchpG/share.png" alt="">{{item.post_share}}</div>
+            
+        </div>
+        <div class="post-porfile-icon">
+            <img [src]="item.user_pfp" alt=""><i class="fas fa-caret-down"></i>
+        </div>
+    </div>
+</div>
+
+}
+<!-- <div class="post-container">
+    <div class="post-row">
+        <div class="user-profile">
+            <img src="https://i.postimg.cc/cHg22LhR/profile-pic.png">
+            <div>
+                <p>{{loggedin_user.first_name}} {{loggedin_user.last_name}}</p>
+               <span>June 24 2021, 13:40 pm</span>
+            </div>
+        </div>
+        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+    </div>
+    <p class="post-text">Subscribe <span>Vkive Tutorials</span> Youtube Channel to watch more videos on 
+    website development and UI desings. <a href="#">#VkiveTutorials</a> <a href="#">#YoutubeChannel</a></p>
+    <img src="https://i.postimg.cc/9fjhGTY6/feed-image-1.png" class="post-img">
+    <div class="post-row">
+        <div class="activity-icons">
+            <div><img src="https://i.postimg.cc/pLKNXrMq/like-blue.png">120</div>
+            <div><img src="https://i.postimg.cc/rmjMymWv/comments.png">45</div>
+            <div><img src="https://i.postimg.cc/T2bBchpG/share.png">20</div>
+        </div>
+        <div class="post-porfile-icon">
+            <img src="https://i.postimg.cc/cHg22LhR/profile-pic.png"><i class="fas fa-caret-down"></i>
+        </div>
+    </div>
+</div>
+<div class="post-container">
+    <div class="post-row">
+        <div class="user-profile">
+            <img src="https://i.postimg.cc/cHg22LhR/profile-pic.png">
+            <div>
+                <p>John Nicholson</p>
+               <span>June 24 2021, 13:40 pm</span>
+            </div>
+        </div>
+        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+    </div>
+    <p class="post-text">Like and share this video with friends, tag<span>Vkive Tutorials</span>facebook page on your post.
+    Ask your dobuts in the comments. <a href="#">#VkiveTutorials</a> <a href="#">#YoutubeChannel</a></p>
+    <img src="https://i.postimg.cc/Xvc0xJ2p/feed-image-2.png" class="post-img">
+    <div class="post-row">
+        <div class="activity-icons">
+            <div><img src="https://i.postimg.cc/pLKNXrMq/like-blue.png">120</div>
+            <div><img src="https://i.postimg.cc/rmjMymWv/comments.png">45</div>
+            <div><img src="https://i.postimg.cc/T2bBchpG/share.png">20</div>
+        </div>
+        <div class="post-porfile-icon">
+            <img src="https://i.postimg.cc/cHg22LhR/profile-pic.png"><i class="fas fa-caret-down"></i>
+        </div>
+    </div>
+</div>
+<div class="post-container">
+    <div class="post-row">
+        <div class="user-profile">
+            <img src="https://i.postimg.cc/cHg22LhR/profile-pic.png">
+            <div>
+                <p>John Nicholson</p>
+               <span>June 24 2021, 13:40 pm</span>
+            </div>
+        </div>
+        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+    </div>
+    <p class="post-text">Like and share this video with friends, tag<span>Vkive Tutorials</span>facebook page on your post.
+    Ask your dobuts in the comments. <a href="#">#VkiveTutorials</a> <a href="#">#YoutubeChannel</a></p>
+    <img src="https://i.postimg.cc/tJ7QXz9x/feed-image-3.png" class="post-img">
+    <div class="post-row">
+        <div class="activity-icons">
+            <div><img src="https://i.postimg.cc/pLKNXrMq/like-blue.png">120</div>
+            <div><img src="https://i.postimg.cc/rmjMymWv/comments.png">45</div>
+            <div><img src="https://i.postimg.cc/T2bBchpG/share.png">20</div>
+        </div>
+        <div class="post-porfile-icon">
+            <img src="https://i.postimg.cc/cHg22LhR/profile-pic.png"><i class="fas fa-caret-down"></i>
+        </div>
+    </div>
+</div>
+<div class="post-container">
+    <div class="post-row">
+        <div class="user-profile">
+            <img src="https://i.postimg.cc/cHg22LhR/profile-pic.png">
+            <div>
+                <p>John Nicholson</p>
+               <span>June 24 2021, 13:40 pm</span>
+            </div>
+        </div>
+        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+    </div>
+    <p class="post-text">Like and share this video with friends, tag<span>Vkive Tutorials</span>facebook page on your post.
+    Ask your dobuts in the comments. <a href="#">#VkiveTutorials</a> <a href="#">#YoutubeChannel</a></p>
+    <img src="https://i.postimg.cc/hjDRYBwM/feed-image-4.png" class="post-img">
+    <div class="post-row">
+        <div class="activity-icons">
+            <div><img src="https://i.postimg.cc/pLKNXrMq/like-blue.png">120</div>
+            <div><img src="https://i.postimg.cc/rmjMymWv/comments.png">45</div>
+            <div><img src="https://i.postimg.cc/T2bBchpG/share.png">20</div>
+        </div>
+        <div class="post-porfile-icon">
+            <img src="https://i.postimg.cc/cHg22LhR/profile-pic.png"><i class="fas fa-caret-down"></i>
+        </div>
+    </div>
+</div>
+<div class="post-container">
+    <div class="post-row">
+        <div class="user-profile">
+            <img src="https://i.postimg.cc/cHg22LhR/profile-pic.png">
+            <div>
+                <p>John Nicholson</p>
+               <span>June 24 2021, 13:40 pm</span>
+            </div>
+        </div>
+        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+    </div>
+    <p class="post-text">Like and share this video with friends, tag<span>Vkive Tutorials</span>facebook page on your post.
+    Ask your dobuts in the comments. <a href="#">#VkiveTutorials</a> <a href="#">#YoutubeChannel</a></p>
+    <img src="https://i.postimg.cc/ZRwztQzm/feed-image-5.png" class="post-img">
+    <div class="post-row">
+        <div class="activity-icons">
+            <div><img src="https://i.postimg.cc/pLKNXrMq/like-blue.png">120</div>
+            <div><img src="https://i.postimg.cc/rmjMymWv/comments.png">45</div>
+            <div><img src="https://i.postimg.cc/T2bBchpG/share.png">20</div>
+        </div>
+        <div class="post-porfile-icon">
+            <img src="https://i.postimg.cc/cHg22LhR/profile-pic.png"><i class="fas fa-caret-down"></i>
+        </div>
+    </div>
+</div> -->
+<button type="button" class="load-more-btn">Load More</button>
